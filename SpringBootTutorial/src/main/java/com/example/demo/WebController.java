@@ -1,0 +1,16 @@
+package com.example.demo;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class WebController {
+    @RequestMapping("/hello")
+    public String SayHello(Model model){
+        System.out.println("Received Request. Saying Hello SpringBoot!");
+        model.addAttribute("message","Greetings");
+
+        return "hello";
+    }
+}
